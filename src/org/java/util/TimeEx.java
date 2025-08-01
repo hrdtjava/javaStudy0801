@@ -39,9 +39,9 @@ public class TimeEx {
 		// Calender
 		Calendar cal= Calendar.getInstance();
 		System.out.println(cal);
-		System.out.println(cal.get(Calendar.YEAR));	//2024
-		System.out.println(cal.get(Calendar.MONTH)+1);//11
-		System.out.println(cal.get(Calendar.DAY_OF_MONTH));//14
+		System.out.println(cal.get(Calendar.YEAR));	//2025
+		System.out.println(cal.get(Calendar.MONTH)+1);//8
+		System.out.println(cal.get(Calendar.DAY_OF_MONTH));//1
 		System.out.println(cal.get(Calendar.WEEK_OF_MONTH));// 3
 		System.out.println(cal.get(Calendar.HOUR));// 	시	
 		System.out.println(cal.get(Calendar.MINUTE));// 분

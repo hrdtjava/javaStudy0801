@@ -21,8 +21,11 @@ public class MemberDto {
 		System.out.println("MemberDto-> @NoArgsConstruct");
 	}
 
-	public MemberDto(int memberId, String userEmail, String userPw, String userName, Role userRole,
-			LocalDateTime createTime, LocalDateTime updateTime) {
+	public MemberDto(int memberId, String
+			userEmail, String userPw, 
+			String userName, Role userRole,
+			LocalDateTime createTime,
+			LocalDateTime updateTime) {
 		super();
 		this.memberId = memberId;
 		this.userEmail = userEmail;

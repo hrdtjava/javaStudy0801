@@ -11,12 +11,15 @@ public class LocalDateTimeEx4 {
 		LocalDateTime startTime = LocalDateTime.now();// 오늘 -> 현재 시간
 		System.out.println(startTime);
 
-		LocalDateTime endTime = LocalDateTime.of(2023, 12, 20, 16, 30, 20);
+		LocalDateTime endTime = LocalDateTime.of(2025, 12, 20, 16, 30, 20);
 		System.out.println(endTime);
 		// 이전이냐?
 		boolean bool = startTime.isBefore(endTime);
 		if (!bool) {
 			System.out.println("예약시작일은 예약 종료일보다 이전일이어야 합니다!!");
+		}else {			
+			System.out.println("예약가능합니다. 예약일을 선택해 주세요!!");
+			System.out.println("예약가능일: "+endTime);
 		}
 		// 같으냐? -> 예약한 날 확인?
 		boolean bool2 = startTime.equals(endTime);
@@ -26,9 +29,11 @@ public class LocalDateTimeEx4 {
 		boolean bool3 = startTime.isAfter(endTime);
 		if (bool3) {
 			System.out.println("예약시작일은 예약 종료일보다 이전일이어야 합니다!!");
+		}else {			
+			System.out.println("예약가능합니다. 예약일을 선택해 주세요!!");
+			System.out.println("예약가능일: "+endTime);
 		}
 
-		// 이후냐?
 
 	}
 }
