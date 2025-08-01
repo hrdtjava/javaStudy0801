@@ -38,10 +38,10 @@ public class VectorEx2 {
 					if (query.equals("insert")) {
 						System.out.println("회원가입 -> ");
 
-						System.out.print("memberId: ");
+						System.out.print("memberId: "); //중복불가능
 						int memberId = input.nextInt();
 
-						System.out.print("userEmail: ");
+						System.out.print("userEmail: ");//중복불가능
 						String userEmail = input.next();
 
 						System.out.print("userPw: ");
@@ -50,7 +50,8 @@ public class VectorEx2 {
 						System.out.print("userName: ");
 						String userName = input.next();
 
-						members.add(new MemberDto(memberId, userEmail, userPw, userName, Role.ROLE_MEMBER,
+						members.add(new MemberDto(memberId, userEmail, userPw, userName, 
+								Role.ROLE_MEMBER,
 								LocalDateTime.now(), null));
 
 					} else if (query.equals("exit")) {
@@ -70,11 +71,10 @@ public class VectorEx2 {
 
 		System.out.println("foreach");
 		for (MemberDto member : members) {
-			// id:~, 이메일: ~, 비빌번호:~,주소:~,Role:~ ,가입시간:~
-			if (member.getUserEmail().equals("m2@email.com")) {
+//			if (member.getUserEmail().equals("m2@email.com")) {
 				System.out.println(member.getMemberId() + ", " + member.getUserEmail() + ", " + member.getUserPw()
 						+ ", " + member.getUserName() + ", " + member.getUserRole() + ", " + member.getCreateTime());
-			}
+//			}
 		}
 		input.close();
 

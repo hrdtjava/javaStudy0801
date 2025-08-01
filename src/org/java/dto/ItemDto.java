@@ -2,13 +2,15 @@ package org.java.dto;
 
 import java.time.LocalDateTime;
 
+import org.java.entity.ItemEntity;
+
 //@NoArgsConstruct
 //@AllArgsConstruct
 //@ToString
 //@Builder
 public class ItemDto {
 
-	private int itemId;			//중복불가능 -> 자동으로 설정
+	private Long itemId;			//중복불가능 -> 자동으로 설정
 	private String itemName;  //상품명
 	private int itemPrice;     //상품가격
 	private String itemDetail; //상품내용
@@ -24,7 +26,8 @@ public class ItemDto {
 
 	// 모든필드 매개인자-> 생성자
 	//@AllArgsConstruct
-	public ItemDto(int itemId, String itemName, int itemPrice, String itemDetail, int inventory,
+	public ItemDto(Long itemId, String itemName, 
+			int itemPrice, String itemDetail, int inventory,
 			LocalDateTime createTime, LocalDateTime updateTime) {
 		super();
 		this.itemId = itemId;
@@ -37,11 +40,11 @@ public class ItemDto {
 	}
 
 	//setter, getter
-	public int getItemId() {
+	public Long getItemId() {
 		return itemId;
 	}
 
-	public void setItemId(int itemId) {
+	public void setItemId(Long itemId) {
 		this.itemId = itemId;
 	}
 
@@ -100,5 +103,35 @@ public class ItemDto {
 				+ itemDetail + ", 재고량=" + inventory + ", 입고일=" + createTime + ", 수정일=" + updateTime
 				+ "]";
 	}	
+	
+	//Entity -> Dto	
+	// spring boot JPA 
+	public static ItemDto toInsertItemDto(ItemEntity itemEntity) {
+		
+		ItemDto itemDto=new ItemDto();		
+		itemDto.setItemId(itemEntity.getItemId());
+		
+		
+		
+		
+		return itemDto;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

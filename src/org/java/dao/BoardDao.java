@@ -6,8 +6,9 @@ import org.java.connect.DBConnect;
 import org.java.dto.BoardDto;
 
 public class BoardDao {
+	
 	private BoardDao() {
-		System.out.println("BoardDao -> 싱글토");
+		System.out.println("BoardDao -> 싱글톤");
 	}
 	private static class SingleTonClass{
 		private static final BoardDao INSTANCE=new BoardDao();
